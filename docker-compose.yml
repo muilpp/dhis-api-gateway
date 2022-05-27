@@ -1,0 +1,27 @@
+version: "3"
+services:
+  dhis2-api:
+    image: muilpp/dhis2-api
+    ports:
+      - "8091:8091"
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/dhis2
+    networks:
+      - api-network
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    image: mysql:8
+    networks:
+      - api-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=dhis2
+      - MYSQL_USER=dhis2
+      - MYSQL_PASSWORD=admin
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+
+networks:
+  api-network:

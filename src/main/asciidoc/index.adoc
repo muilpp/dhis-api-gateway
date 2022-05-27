@@ -1,0 +1,15 @@
+= Dhis2 API Docs
+
+The following requests are available at http://localhost:8091:
+
+.request
+include::{snippets}/data-elements/http-request.adoc[]
+
+.response
+include::{snippets}/data-elements/http-response.adoc[]
+
+.request
+include::{snippets}/group-elements/http-request.adoc[]
+
+.response
+include::{snippets}/group-elements/http-response.adoc[]
