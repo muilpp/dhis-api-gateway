@@ -6,6 +6,7 @@ import com.dhis2.gateway.api.playdhis2.model.elements.DataElementsDTO;
 import com.dhis2.gateway.api.playdhis2.model.groups.GroupDataElement;
 import com.dhis2.gateway.api.playdhis2.model.groups.GroupDataElementsDTO;
 import com.dhis2.gateway.api.playdhis2.model.groups.GroupElements;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
 
@@ -16,6 +17,7 @@ import java.util.List;
 public class GatewayElementsDTOTest {
 
     @Test
+    @DisplayName("Element data is mapped to gateway group element")
     public void elementDataIsTransformedToGatewayGroupElement() {
         //Given all the element data
         DataElementsDTO elementsDTO = new DataElementsDTO();
@@ -48,6 +50,7 @@ public class GatewayElementsDTOTest {
     }
 
     @Test
+    @DisplayName("Group data is mapped to gateway member element")
     public void groupDataIsTransformedToGatewayMemberElement() {
         //Given all the group data
         GroupDataElementsDTO groupsDTO = new GroupDataElementsDTO();

@@ -5,6 +5,7 @@ import com.dhis2.gateway.api.playdhis2.model.elements.DataElementsDTO;
 import com.dhis2.gateway.api.playdhis2.model.groups.GroupDataElementsDTO;
 import com.dhis2.gateway.api.playdhis2.model.groups.GroupElements;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -30,6 +31,7 @@ public class Dhis2ServiceImplTest {
     private Dhis2Service dhis2Service;
 
     @Test
+    @DisplayName("Data element is correctly fetched")
     public void dataElementIsRequestedAndFetchedCorrectly() {
         //Given the data element and the mocked endpoint
         DataElementsDTO dataElementsDTO = new DataElementsDTO(Arrays.asList(
@@ -49,6 +51,7 @@ public class Dhis2ServiceImplTest {
     }
 
     @Test
+    @DisplayName("Group element is correctly fetched")
     public void dataElementGroupsAreRequestedAndFetchedCorrectly() {
         //Given the group element and the mocked endpoint
         GroupDataElementsDTO groupDataElementsDTO = new GroupDataElementsDTO(Arrays.asList(
